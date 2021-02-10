@@ -39,8 +39,7 @@ public class NotesServlet extends HttpServlet {
             throws ServletException, IOException {
         
         String title = request.getParameter("ntitle");
-        String content = request.getParameter("ntitle");
-        
+        String content = request.getParameter("ncontent");
         
         String path = getServletContext().getRealPath("/WEB-INF/note.txt");
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false)));
@@ -48,5 +47,9 @@ public class NotesServlet extends HttpServlet {
         pw.println(title);
         pw.println(content);
         pw.close();
+        
+        Note n = new Note(title, content);
+        request.setAttribute("note", n);
+        getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp").forward(request, response);
     }
 }

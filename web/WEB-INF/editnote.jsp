@@ -9,7 +9,7 @@
     <body>
         <h1>Simple Note Keeper</h1>
         <h2>Edit Note</h2>
-        <form>
+        <form action="note" method="POST">
             <b>Title: </b>
             <input name="ntitle" value="${note.title}">
             <br>
@@ -18,7 +18,7 @@
             <input name="ncontent" value="${note.content}">
             <br>
             <br>
-            <input type="submit" action="note" method="POST" value="Save">
+            <input type="submit" value="Save">
         </form>
     </body>
 </html>
