@@ -11,11 +11,11 @@
         <h2>Edit Note</h2>
         <form>
             <b>Title: </b>
-            <textarea name="ntitle">${note.title}</textarea>
+            <input name="ntitle" value="${note.title}">
             <br>
             <br>
             <b>Contents: </b>
-            <textarea name="ncontent">${note.content}</textarea>
+            <input name="ncontent" value="${note.content}">
             <br>
             <br>
             <input type="submit" action="note" method="POST" value="Save">
